@@ -1,0 +1,2 @@
+# dddGameOnlineshop
+DDDしてみる．ゲームのオンラインショップをモデリングしてみる
