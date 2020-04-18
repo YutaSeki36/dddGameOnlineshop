@@ -15,6 +15,7 @@ type Game struct {
 	Price       values.Price
 	ReleaseDate time.Time
 	Maker       string
+	Cero        values.Cero
 }
 
 // GemeInput Game生成用のインプット構造体
@@ -25,4 +26,5 @@ type GemeInput struct {
 	Price       int
 	ReleaseDate time.Time
 	Maker       string
+	Cero        string
 }
