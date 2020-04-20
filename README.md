@@ -44,3 +44,13 @@ DDDしてみる．ゲームのオンラインショップをモデリングし�
   - 開発ゲーム一覧(ゲームIDのリスト)
 
 - ユーザ
+
+### ユースケース
+
+
+## アーキテクチャ
+実装はClean Architectureを意識
+
+![CleanArchitecture](https://user-images.githubusercontent.com/25469830/79748569-a35ebb80-8348-11ea-9c1e-d9647baf77b9.jpg)
+
+抽象に依存
