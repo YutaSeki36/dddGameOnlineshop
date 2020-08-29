@@ -35,4 +35,41 @@ func NewCero(cero string) (*Cero, error) {
 	}
 }
 
-// TODO: 購入者の年齢がCeroを満たしているかのチェック
+// NewACero Aレーティングオブジェクトを生成
+func NewACero() (*Cero, error) {
+	cero, err := NewCero("A")
+	if err != nil {
+		return nil, fmt.Errorf(err.Error())
+	}
+	return cero, nil
+}
+
+// isARate レーティングAかチェック
+func (c *Cero) isARate() bool {
+	return c.Rate == "A"
+}
+
+// isBRate レーティングBかチェック
+func (c *Cero) isBRate() bool {
+	return c.Rate == "B"
+}
+
+// isCRate レーティングCかチェック
+func (c *Cero) isCRate() bool {
+	return c.Rate == "C"
+}
+
+// isDRate レーティングDかチェック
+func (c *Cero) isDRate() bool {
+	return c.Rate == "D"
+}
+
+// isZRate レーティングZかチェック
+func (c *Cero) isZRate() bool {
+	return c.Rate == "Z"
+}
+
+// validate 引数で与えられた年齢がレーティング対象年齢を満たしているかチェック
+func (c *Cero) validate(age int64) bool {
+	return c.TargetMinimumAge <= age
+}
