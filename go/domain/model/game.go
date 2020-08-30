@@ -33,7 +33,7 @@ type GameInput struct {
 }
 
 // NewGame Gameオブジェクトの生成メソッド
-func NewGame(input GameInput) (*Game, error) {
+func NewGame(input *GameInput) (*Game, error) {
 	title, err := values.NewTitle(input.Title)
 	if err != nil {
 		return nil, fmt.Errorf("タイトル生成に失敗しました．エラー内容: %s", err.Error())
@@ -58,4 +58,10 @@ func NewGame(input GameInput) (*Game, error) {
 		maker:       input.Maker,
 		cero:        *cero,
 	}, nil
+}
+
+// IsAlreadyReleased 対象ゲームが発売済みかチェック
+func (g *Game) IsAlreadyReleased() bool {
+	now := time.Now()
+	return now.After(g.releaseDate)
 }

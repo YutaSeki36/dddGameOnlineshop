@@ -1,4 +1,4 @@
-module github.com/dddGameOnlineshop
+module github.com/dddGameOnlineshop/go
 
 go 1.14
 
