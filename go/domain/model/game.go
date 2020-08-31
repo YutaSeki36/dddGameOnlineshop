@@ -17,9 +17,12 @@ type Game struct {
 	genre       string
 	price       values.Price
 	releaseDate time.Time
-	maker       string
+	maker       []int // マリオ&ソニックのように共同開発される場合があるため
 	cero        values.Cero
 }
+
+// Games ゲームリスト
+type Games []Game
 
 // GameInput Game生成用のインプット構造体
 type GameInput struct {
@@ -28,7 +31,7 @@ type GameInput struct {
 	Genre       string
 	Price       int
 	ReleaseDate time.Time
-	Maker       string
+	Maker       []int
 	Cero        string
 }
 
