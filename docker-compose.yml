@@ -1,10 +1,7 @@
 version: "3"
 services:
   db:
-    image: mysql:5.7
-    volumes:
-      - mysql_data:/var/lib/mysql
-      - ./sqls/init:/docker-entrypoint-initdb.d
+    build: ./go/docker/mysql
     ports:
       - "3306:3306"
     restart: always
@@ -13,7 +10,7 @@ services:
       MYSQL_DATABASE: gameshop
       MYSQL_USER: user
       MYSQL_PASSWORD: password
-
+    command: mysqld
   app:
     build: ./go
     depends_on:
